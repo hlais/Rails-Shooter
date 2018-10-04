@@ -160,10 +160,7 @@ namespace UnityStandardAssets.Utility
         {
             DrawGizmos(true);
         }
-        private void TestMe()
-        {
-            print("i like gravy");
-        }
+   
 
 
         private void DrawGizmos(bool selected)

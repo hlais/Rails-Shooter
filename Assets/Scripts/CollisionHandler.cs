@@ -19,6 +19,7 @@ public class CollisionHandler : MonoBehaviour {
         SendMessage("OnPlayerDeath");
         explosion.SetActive(true);
         Invoke("ReloadLevel", levelLoadDelay);
+
         
             
     }
