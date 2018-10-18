@@ -21,8 +21,9 @@ public class Enemy : MonoBehaviour {
 
     private void AddNonTriggerBox()
     {
+        //this is to test roll back  
+        //if this comment does not exist then I have rolled back succesfully;
        Collider shipCollider =   gameObject.AddComponent<BoxCollider>();
-        
         shipCollider.isTrigger = false;
         
     }
