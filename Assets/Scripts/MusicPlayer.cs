@@ -2,32 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour {
+public class MusicPlayer : MonoBehaviour
+{
+    [SerializeField] GameObject trumpAudio;
+    AudioSource audioSource;
+    float currentVolume;
 
-    [SerializeField] AudioClip donaldTrump;
     private void Awake()
     {
-       
-       int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
+        audioSource = GetComponent<AudioSource>();
+        currentVolume = audioSource.volume;
+        int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
 
         print("Number of music players in this scene" + numMusicPlayers);
 
-         if (numMusicPlayers > 1)
+        if (numMusicPlayers > 1)
         {
             Destroy(gameObject);
         }
         else
-      
+
             DontDestroyOnLoad(gameObject);
-               
-        
+
+
     }
-    public void PlayDonalodAudio()
+
+    public void TrumpAudio()
     {
-        AudioSource.PlayClipAtPoint(donaldTrump, transform.position);
+        audioSource.volume = 0.1f;
+        GameObject fx = Instantiate(trumpAudio, transform.position, transform.rotation);
+        Invoke("RevertVolumeToOriginal", 10f);
     }
-    
 
-
- 
+    private void RevertVolumeToOriginal()
+    {
+        audioSource.volume = currentVolume;
+    }
 }
+
+
+
+
+    

@@ -9,31 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1071932656576092}
+  m_RootGameObject: {fileID: 1571247904766624}
   m_IsPrefabAsset: 1
---- !u!1 &1071932656576092
+--- !u!1 &1571247904766624
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4657000632775672}
-  - component: {fileID: 82234887998161792}
-  - component: {fileID: 114878887945223072}
+  - component: {fileID: 4009365272420148}
+  - component: {fileID: 82337337153648636}
   m_Layer: 0
-  m_Name: MusicPlayer
+  m_Name: TrumpSpeech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4657000632775672
+--- !u!4 &4009365272420148
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071932656576092}
+  m_GameObject: {fileID: 1571247904766624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,20 +40,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82234887998161792
+--- !u!82 &82337337153648636
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071932656576092}
+  m_GameObject: {fileID: 1571247904766624}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7c1450a8b033ecc43bf4b1a10c08bfb1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 20c39a3e14540094f8c2e18481345eb0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.554
-  m_Pitch: 0.84
-  Loop: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -136,15 +135,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114878887945223072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071932656576092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef14c7dc364f55149bee0041b7d0efcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trumpAudio: {fileID: 1571247904766624, guid: 03a5453a2c20d0c4b8a0e2df3daf3304, type: 2}
