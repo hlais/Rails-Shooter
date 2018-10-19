@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
 
+    [SerializeField] AudioClip donaldTrump;
     private void Awake()
     {
+       
        int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
 
         print("Number of music players in this scene" + numMusicPlayers);
@@ -20,6 +22,11 @@ public class MusicPlayer : MonoBehaviour {
                
         
     }
+    public void PlayDonalodAudio()
+    {
+        AudioSource.PlayClipAtPoint(donaldTrump, transform.position);
+    }
+    
 
 
  

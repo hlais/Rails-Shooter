@@ -9,6 +9,7 @@ public class PlayerShipController : MonoBehaviour {
     [Tooltip("In ms^-1")] [SerializeField] float speed = 4;
     [SerializeField] float xRange = 4.39f;
     [SerializeField] float yRange = 3;
+    [SerializeField] GameObject[] guns;
 
     [Header ("Screen Position")]
     [SerializeField] float pitchFactor = -6.5f;
@@ -36,8 +37,38 @@ public class PlayerShipController : MonoBehaviour {
             HorizontalMovment();
             VerticleMovment();
             ProcessRotation();
+            ProcessFiring();
         }
     }
+
+    private void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeActivateGuns();
+        }
+    }
+
+    private void DeActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
     private void OnPlayerDeath() // called by string referene 
     {
         isControlEnabled = false;

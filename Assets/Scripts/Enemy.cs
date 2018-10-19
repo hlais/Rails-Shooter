@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
     // Use this for initialization
-    [SerializeField] int hitPoints = 12; 
+    [SerializeField] int hitPoints = 12;
+     [SerializeField] int health = 15;
 
     ScoreBoard scoreBoard;
 	void Start () {
@@ -21,19 +22,33 @@ public class Enemy : MonoBehaviour {
 
     private void AddNonTriggerBox()
     {
-        //this is to test roll back  
-        //if this comment does not exist then I have rolled back succesfully;
+      
        Collider shipCollider =   gameObject.AddComponent<BoxCollider>();
         shipCollider.isTrigger = false;
         
     }
 
-    // Update is called once per frame
+   
  
     private void OnParticleCollision(GameObject other)
     {
-        GameObject fx = Instantiate(deathFX, transform.position, transform.rotation);
+        ProcessHit();
+
+        if (health <= 0)
+        {
+            KillEnemy();
+        }
+    }
+
+    private void ProcessHit()
+    {
         scoreBoard.HitPoints(hitPoints);
+        health--;
+    }
+
+    private void KillEnemy()
+    {
+        GameObject fx = Instantiate(deathFX, transform.position, transform.rotation);
         fx.transform.parent = parent;
         Destroy(gameObject);
     }
